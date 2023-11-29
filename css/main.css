@@ -1,4 +1,13 @@
-body    {
-    background-color: lightblue;
-    text-align:center;
+body {
+    margin: 30px 20px 20px 30px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1  {
+    font-style: oblique;
+    text-align: center;
+    color: White;
 }
