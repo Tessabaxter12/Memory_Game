@@ -10,47 +10,46 @@ Game History: The first published game form of concentration, was in 1959 by Rav
 
 Link To Game: http://127.0.0.1:5500/
 
-Game Rules: This is a two player game, that takes attention and concentration. Cards get randomly placed face down on the grid board. Then each player takes a turn by selecting two cards that turn over. If the cards match, then the player keeps them. If they don't match, the cards turn back over, and the next player goes. If the player gets a match, they get to go again, until they fail to get a match. The player with the most cards wins.
+Game Rules: This is a one player game, that takes attention and concentration. Cards get randomly placed face down on the grid board. Then the game begins when the player hits the start game button, which also starts the 5 minute timer. The player then selects two cards that turn over. If the cards match, then the cards will go away, as they have a match. If they don't match then the cards turn back over. Player will keep playing till all the cards are gone or until the 5 minute timer runs out. Then a message will show you win or you loose. Then the game will restart.
 
 ## Wireframe
 
-![screenshot](images/7E2D854C-C7B6-48EE-9CB9-B760A67121EE_1_105_c.jpeg)
+![screenshot](images/Screenshot 2023-11-30 103004.png)
 
 ## Users Stories
 
 As a user I want to
 - Click start game button and have the game start
-- Click two cards and determine match or next players turn
-- Be able to keep track of pairs for each player
-- At end of game be able to determine which player wins
-- Be able to restart game new round with same player
-- Be able to keep track of round wins with each player
-- Be able to exit rounds and start a new game
+- See the timer start once start button is clicked and see the time running.
+- See you win or you loose
+- Be able to start a new game
+- See fastest time
 
 ## Psuedocode
 
 - Define constants
-    - Cards images of animals
+    - Board
+    - Cards images of sea animals
 
 - Define variables
     
 - Function for sorting cards onto 4x4 grid
 
-- Intializing the game players turn
+- Intializing the game and timer starts
 
-- Function player one selects two cards, they flip over, pointer no longer works.
+- Function player selects two cards, they flip over, pointer no longer works
 
-- function to determine pair, cards go away, pair gets added to that players total pairs, take anouther turn
+- Function to determine pair, then cards go away, and take another turn
 
-- function to determine no match, turn over
+- Else function to determine no match, cards flip back over, and take another turn
 
-- function to rotate to next player, repeat loop
-
-- Time function / Loop break
+- Timer Function
 
 - Render Results When
+    - Time out
     - No cards left on board
-    - Pairs counted
-    - Declair a winner
-    - Round over results tallied
-    - Option to play again
+    - Declair you win or you loose
+
+- Function for fastest time
+
+- Option to play again
