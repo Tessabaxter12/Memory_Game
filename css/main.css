@@ -1,11 +1,12 @@
 body {
-    margin: 0;
-    align-items: center;
     background-image: url("../images/background.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: aqua;
-    display: flex;
+    display: flexbox;
+    min-height: 100vh;
+    justify-self: center;
+    align-items: center;
 }
 
 h1,h2 {
@@ -50,14 +51,14 @@ h1,h2 {
     transform: rotateY(180deg);
 }
 .cardsFront {
-    background-image: <img src="./images/Star Fish.avif" class="card1"/>
-    background-image: <img src="./images/Shark.avif" class="card2"/>
-    background-image: <img src="./images/Dolphin.png" class="card3"/>
-    background-image: <img src="./images/Fish.avif" class="card4"/>
-    background-image: <img src="./images/Octopus.avif.avif" class="card5"/>
-    background-image: <img src="./images/Sea Horse.avif" class="card6"/>
-    background-image: <img src="./images/Turtle.webp" class="card7"/>
-    background-image: <img src="./images/JellyFish.avif" class="card8"/>
+    background-image img src="./images/Star Fish.avif" class="card1"
+    background-image img src="./images/Shark.avif" class="card2"
+    background-image img src="./images/Dolphin.png" class="card3"
+    background-image img src="./images/Fish.avif" class="card4"
+    background-image img src="./images/Octopus.avif.avif" class="card5"
+    background-image img src="./images/Sea Horse.avif" class="card6"
+    background-image img src="./images/Turtle.webp" class="card7"
+    background-image img src="./images/JellyFish.avif" class="card8"
 }
 .cardsRear  {
     background-color: aqua;
@@ -74,8 +75,6 @@ p{
     display: inline-flex;
     gap: 1rem;
 }
-
-
 
 #timer-container {
     color: white;
