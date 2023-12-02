@@ -8,13 +8,13 @@ Game History: The first published game form of concentration, was in 1959 by Rav
 - CSS
 - JavaScript
 
-Link To Game: http://127.0.0.1:5500/
+Link To Game: https://github.com/Tessabaxter12/Memory_Game
 
 Game Rules: This is a one player game, that takes attention and concentration. Cards get randomly placed face down on the grid board. Then the game begins when the player hits the start game button, which also starts the 5 minute timer. The player then selects two cards that turn over. If the cards match, then the cards will go away, as they have a match. If they don't match then the cards turn back over. Player will keep playing till all the cards are gone or until the 5 minute timer runs out. Then a message will show you win or you loose. Then the game will restart.
 
 ## Wireframe
 
-![screenshot](images/Screenshot 2023-11-30 103004.png)
+![screenshot]("../images/Screenshot 2023-11-30 103004.png")
 
 ## Users Stories
 

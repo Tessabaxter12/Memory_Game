@@ -8,10 +8,8 @@
     <title>Memory_Game</title>
 </head>
     <h1>Concentration Under The Sea</h1>   
-
 <body>    
     <h2>Fastest Time:</p=h2>
-        
     <div class="gameboard" id ="gameboard">   
         <div cell="0" class="cell"></div>
         <div cell="1" class="cell"></div>
@@ -26,13 +24,20 @@
         <div cell="10" class="cell"></div>
         <div cell="11" class="cell"></div>
     </div>
-    
     <div class="clock"> 
         <h2>Time Remaining:</h2>
-        <h1>00:00</h1>
-        <div data-value="minutes"></div>
-        <div data-value="seconds"></div>
-        <button class="playbutton">Start Game</button>
+        <p id="countdown">5:00</p>
+
+        
+        <!ul id="timer-container">
+            <!li id="minutes" role="timer"><span>0</span> Minutes</li>
+            <!li>:</li>
+            <!li id="seconds" role="timer"><span>0</span> Seconds</li>
+        <!/ul>
     </div>
+    <button class="playbutton">Start Game</button>
+    <div id='timer-end'></div>
+    <cards>
+    </cards>
 </body>
 </html>

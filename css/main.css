@@ -1,14 +1,14 @@
 body {
     margin: 0;
-    justify-content: center;
     align-items: center;
     background-image: url("../images/background.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: aqua;
+    display: flex;
 }
 
-h1,h2,h1 {
+h1,h2 {
     font-style: oblique;
     text-align: center;
     color: White;
@@ -20,7 +20,7 @@ h1,h2,h1 {
     grid-template-columns: repeat(4, auto);
     width: 400px;
     align-content: center;
-    justify-items:center;
+    justify-items: center;
     color: aqua;
     border-color: aqua;
     margin: 50px 500px 0px 400px;
@@ -40,14 +40,58 @@ h1,h2,h1 {
     align-items: center;
 }
 
-.clock * {
-    color: White;
+.cards{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+}
+.cardsFront {
+    background-image: <img src="./images/Star Fish.avif" class="card1"/>
+    background-image: <img src="./images/Shark.avif" class="card2"/>
+    background-image: <img src="./images/Dolphin.png" class="card3"/>
+    background-image: <img src="./images/Fish.avif" class="card4"/>
+    background-image: <img src="./images/Octopus.avif.avif" class="card5"/>
+    background-image: <img src="./images/Sea Horse.avif" class="card6"/>
+    background-image: <img src="./images/Turtle.webp" class="card7"/>
+    background-image: <img src="./images/JellyFish.avif" class="card8"/>
+}
+.cardsRear  {
+    background-color: aqua;
+}
+
+p{
+    color: white;
+    padding: 2rem;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    display: inline-flex;
+    gap: 1rem;
+}
+
+
+
+#timer-container {
+    color: white;
+    padding: 2rem;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    display: inline-flex;
+    gap: 1rem;
 }
 
 button {
     background-color: aqua;
     margin: auto;
-    border: 4px solid;
     padding: 20px 20px;
     text-align: center;
     color: white;
@@ -55,4 +99,5 @@ button {
     font-size: 30px;
     align-content: center;
     justify-items:center;
+    border: 2px solid white;
 }
