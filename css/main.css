@@ -1,57 +1,63 @@
+* {
+    box-sizing: border-box; 
+}
+html {
+    min-height: 100vh;
+}
+
 body {
     background-image: url("../images/background.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: aqua;
-    display: flexbox;
     min-height: 100vh;
-    justify-self: center;
-    align-items: center;
-}
-
-h1,h2 {
-    font-style: oblique;
-    text-align: center;
-    color: White;
-    font-size: 8vmin;
-}   
-
-#gameboard {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    width: 400px;
-    align-content: center;
-    justify-items: center;
-    color: aqua;
-    border-color: aqua;
-    margin: 50px 500px 0px 400px;
-}
-
-.cell {
-    cursor: pointer;
-    border: 3px solid;
-    color: aqua;
-    box-shadow: 0 0 0 3px;
-    line-height: 175px;
-    width: 175px;
-    height: 175px;
-    font-size: 20px;
-    display: flex; 
+    margin: auto;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.cards{
+h1 {
+    font-style: oblique;
+    text-align: center;
+    color: White;
+    font-size: 10vmin;
+    margin: 10px;
+}   
+
+h2 {
+    font-size: 6vmin;
+    font-style: oblique;
+    color: White;
+    margin: 10px;
+}
+
+.gameboard {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    justify-content: center;
+    color: aqua;
+    gap: 10px;
+    margin: 10px;
+}
+
+.cards {
     height: 150px;
-    width: 150px;
+    width: 125px;
+    background-image: url("../images/Fish.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: aqua;
     object-fit: cover;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
     transform: rotateY(180deg);
 }
-.cardsFront {
-    background-image img src="./images/Star Fish.avif" class="card1"
+
+.cards-front {
+    background-image: url("../images/Star Fish.avif");
     background-image img src="./images/Shark.avif" class="card2"
     background-image img src="./images/Dolphin.png" class="card3"
     background-image img src="./images/Fish.avif" class="card4"
@@ -60,43 +66,15 @@ h1,h2 {
     background-image img src="./images/Turtle.webp" class="card7"
     background-image img src="./images/JellyFish.avif" class="card8"
 }
-.cardsRear  {
-    background-color: aqua;
-}
-
-p{
-    color: white;
-    padding: 2rem;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    display: inline-flex;
-    gap: 1rem;
-}
-
-#timer-container {
-    color: white;
-    padding: 2rem;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    display: inline-flex;
-    gap: 1rem;
-}
 
 button {
-    background-color: aqua;
+    background-color: blue;
     margin: auto;
-    padding: 20px 20px;
+    padding: 10px 10px;
     text-align: center;
     color: white;
     display: inline-block;
-    font-size: 30px;
+    font-size: 20px;
     align-content: center;
-    justify-items:center;
-    border: 2px solid white;
+    justify-items: center;
 }
