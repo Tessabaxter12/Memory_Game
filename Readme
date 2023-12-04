@@ -23,17 +23,21 @@ As a user I want to
 - See the timer start once start button is clicked and see the time running.
 - See you win or you loose
 - Be able to start a new game
-- See fastest time
 
 ## Psuedocode
 
 - Define constants
-    - Board
-    - Cards images of sea animals
+    - Game Board
+    - Time
+    - Restart Button
+    - Results
 
 - Define variables
+    - let cards
+    - let firstCard, secondCard;
+    - let lockBoard = false;
     
-- Function for sorting cards onto 4x4 grid
+- Function for sorting cards onto 6x3 grid
 
 - Intializing the game and timer starts
 
@@ -49,7 +53,5 @@ As a user I want to
     - Time out
     - No cards left on board
     - Declair you win or you loose
-
-- Function for fastest time
 
 - Option to play again

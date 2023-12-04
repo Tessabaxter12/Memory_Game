@@ -22,7 +22,7 @@ h1 {
     font-style: oblique;
     text-align: center;
     color: White;
-    font-size: 10vmin;
+    font-size: 8vmin;
     margin: 10px;
 }   
 
@@ -30,51 +30,81 @@ h2 {
     font-size: 6vmin;
     font-style: oblique;
     color: White;
-    margin: 10px;
+    margin: 5px;
 }
 
-.gameboard {
+#timer{
+    background-color: darkblue;
+    margin: 10px;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 26px;
+    color: white;
+    display: inline-block;
+}
+
+.gameBoard {
     display: grid;
     grid-template-columns: repeat(6, auto);
     justify-content: center;
     color: aqua;
     gap: 10px;
     margin: 10px;
+    transform: translate (-50%, -50%);
+    left: 50%;
+    top: 50%;
 }
 
-.cards {
-    height: 150px;
-    width: 125px;
+.cardsBack {
+    height: 170px;
+    width: 150px;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-in-out;
     background-image: url("../images/Fish.avif");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: aqua;
     object-fit: cover;
-    border-radius: 10px;
+}
+
+cards.front {
+    display: flex;
     justify-content: center;
+    transform: rotateY(180deg);
     align-items: center;
+}
+
+.cards.flipped {
     transform: rotateY(180deg);
 }
 
-.cards-front {
-    background-image: url("../images/Star Fish.avif");
-    background-image img src="./images/Shark.avif" class="card2"
-    background-image img src="./images/Dolphin.png" class="card3"
-    background-image img src="./images/Fish.avif" class="card4"
-    background-image img src="./images/Octopus.avif.avif" class="card5"
-    background-image img src="./images/Sea Horse.avif" class="card6"
-    background-image img src="./images/Turtle.webp" class="card7"
-    background-image img src="./images/JellyFish.avif" class="card8"
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+}
+
+.actions {
+    display: flex;
+    align-content: center;
+    justify-items: center;
 }
 
 button {
-    background-color: blue;
-    margin: auto;
+    background-color: darkblue;
+    margin: 10px;
     padding: 10px 10px;
     text-align: center;
     color: white;
     display: inline-block;
-    font-size: 20px;
-    align-content: center;
-    justify-items: center;
+    font-size: 26px;
 }
