@@ -50,9 +50,6 @@ h2 {
     color: aqua;
     gap: 10px;
     margin: 10px;
-    transform: translate (-50%, -50%);
-    left: 50%;
-    top: 50%;
 }
 
 .cardsBack {
@@ -62,8 +59,6 @@ h2 {
     justify-content: center;
     align-items: center;
     position: relative;
-    transform-style: preserve-3d;
-    transition: all 0.5s ease-in-out;
     background-image: url("../images/Fish.avif");
     background-repeat: no-repeat;
     background-size: cover;

@@ -2,33 +2,40 @@
 const gameBoard = document.querySelectorAll(".gameBoard > div");
 const results = document.getElementById("results");
 const startButton = document.getElementById("startGame");
-console.log(gameBoard);
-//const cardFronts = document.querySelectorAll('main > img');
 
 //Variables
 let cards;
 let board;
-let interval;
-let firstCard = false;
-let secondCard = false;
 
-//Card Array
+//Card Fronts Array
 const cardFronts = [
   { name: "Dolphin", image: "images/Dolphin.png", matched: false},
+  { name: "Crab", image: "images/Crab.jpeg", matched: false},
+  { name: "Stingray", image: "images/Stingray.webp", matched: false},
+  { name: "Turtle", image: "images/Turtle.webp", matched: false},
+  { name: "Star Fish", image: "images/Star Fish.avif", matched: false}, 
+  { name: "Octopus", image: "images/Fish2.avif", matched: false},
+  { name: "Sea Horse", image: "images/Sea Horse.avif", matched: false},
+  { name: "JellyFish",  image: "images/JellyFish.avif", matched: false},
   { name: "Star Fish", image: "images/Star Fish.avif", matched: false},
-  { name: "Shark", image: "images/Shark.avif", matched: false},
-  { name: "Octopus", image: "images/Octopus.avif", matched: false},
+  { name: "Dolphin", image: "images/Dolphin.png", matched: false},
+  { name: "Shark", image: "images/Octopus.avif", matched: false},
+  { name: "Octopus", image: "images/Fish2.avif", matched: false},
   { name: "Sea Horse", image: "images/Sea Horse.avif", matched: false},
   { name: "Turtle", image: "images/Turtle.webp", matched: false},
+  { name: "Shark", image: "images/Octopus.avif", matched: false},
   { name: "JellyFish",  image: "images/JellyFish.avif", matched: false},
   { name: "Stingray", image: "images/Stingray.webp", matched: false},
   { name: "Crab", image: "images/Crab.jpeg", matched: false}
 ];
 
+//User clicks the start game button
 //Event Listener
 startButton.addEventListener("click",init)
-gameBoard.forEach(function(card){
-  card.addEventListener("click",handleMove)
+gameBoard.forEach(function(card,i){
+  card.addEventListener("click",function(e){
+    handleMove(e,cardFronts[i])
+  })
 })
 
 //Timer & Restart Button
@@ -44,28 +51,24 @@ function timer(){
 }
 
 //handle move
-function handleMove(event){
-  console.log(event.target)
+function handleMove(event,card){
+  console.log(event.target.style)
+  event.target.style.backgroundImage = `url("../${card.image}")`
 }
 
-
+//should invoke an init function that also invoke the timer
 //Intializing the game
-//init();
-
 function init() {
   timer()
-  // Initialize the board with shuffled tiles (2 for each img)
-//board = getShuffledCardFronts();
-// Verify that board has 2 of each tile, shuffled
 console.log('myclickeventworks');
 }
 
 //Function player selects two cards, they flip over, pointer no longer works
+
+
+
 // cards.forEach(card => {
 // card.addEventListing('click', () => {
-// //flip card
-// });
-// });
 
 
 // Function to determine pair
@@ -79,8 +82,5 @@ console.log('myclickeventworks');
 
 // Option to play again
 
-//user clicks start game button
-//cache the start button and an eventlistern
 
-//should invoke an init function that also invoke the timer
 //assign card value to the div
