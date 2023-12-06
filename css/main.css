@@ -6,7 +6,7 @@ html {
 }
 
 body {
-    background-image: url("../images/background.jpeg");
+    background-image: url("../fImages/background.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: aqua;
@@ -58,7 +58,7 @@ h2 {
     justify-content: center;
     align-items: center;
     position: relative;
-    background-image: url("../images/Fishbackground.avif");
+    background-image: url("../bImages/Fishbackground.avif");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: aqua;
