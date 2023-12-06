@@ -1,11 +1,3 @@
-//array = cards
-//change image to fImage(unique) then add bImage(same) in all of the card objects 
-//Add the property flipped: false to all of the object
-//add a check for match function that looks at the card name of the first click and compares to the card name of the second clicked
-//if they are the same keep them flipped and changed matched to true for both
-//if they are not the same changed flipped back to false and display the bImage instead of the fImage
-//on each click assign the first card1selected and card2selecte
-
 //Define constants
 const gameBoard = document.querySelectorAll(".gameBoard > div");
 const results = document.getElementById("results");
@@ -16,6 +8,9 @@ const backImage = '../bImages/Fishbackground.avif'
 let gameOn = false;
 let card1;
 let card2;
+let winner;
+let sec;
+let matched = 0;
 
 //Array of images of card fronts
 const cards = [
@@ -39,87 +34,87 @@ const cards = [
   { name: "Crab", fImage: "fImages/Crab.jpeg", matched: false, flipped: false}
 ];
 
-//Intializing the game
+//Starts the game
 function init() {
   gameOn = true
+  winner = false;
+  sec = 60;
   timer()
-//  shuffle()
+  shuffleCards();
 }
 
-//function to shuffle the card fronts
-// function shuffleCards = (cards){
-//   let currentIndex = array.length;
-//   let temporaryValue, randomIndex;
-//   //Shuffle elements
-//   while (0 !== currentIndex) {
-//     //Pick the remaining element
-//     randomIndex = Math.floor(Math.random() * currentIndex);
-//     currentIndex -= 1;
-//     // And swap it with the current element.
-//     temporaryValue = cardFront[currentIndex];
-//     cardFront[currentIndex] = cardFont[randomIndex];
-//     cardFront[randomIndex] = temporaryValue;
-// }
-//   return cards;
-// }
+//function to shuffle
+function shuffleCards(cards) {
+  //Loops backwards
+  for(Let [i] = cards.length -1; i > 0; i--) {
+    //RandomIndex creats a random between 0 and 1, then rounds it down 
+    let randomIndex = Math.floor(Math.random() * (i+1));
+    //applying the random index and shuffling the order 
+    cards[randomIndex].order = i;
+    //takes the array index name in order
+    cards[i].order = randomIndex;
+  }
+}
 
-//User clicks the start game button
-//Event Listener
+//User clicks the start game button with Event Listener
 startButton.addEventListener("click",init)
 gameBoard.forEach(function(card,i){
   cards[i].element=gameBoard[i]
   card.addEventListener("click",function(e){
     //Front of card flips over
     handleMove(e,cards[i])
-    //Starts timer when first card flipped
   })
 })
 
 //Timer Function
 function timer(){
-  let sec = 60;
   let timer = setInterval(function(){
       document.getElementById('time').innerHTML='00:'+sec;
       sec--;
-      if (sec < 0) {
-          clearInterval(timer);
+      if(sec < 0) {
+        gameDone()
+        clearInterval(timer);
       }
   }, 1000);
 }
 
-//Tallys Wrong Moves
-
 //Handle Move Function allows the back of cards to be clicked
 function handleMove(event,card){
-  if (gameOn){
-    
-    if (!card1){
+  if(gameOn){
+    //No cards clicked
+    if(!card1){
+    //1st card clicked
       card1 = card
-    } else if (card1){
+    //2nd card clicked  
+    } else if(card1){
       card2 = card
-    } 
-
+    }
     //Allows user to flip the cards 
     event.target.style.backgroundImage = `url("../${card.fImage}")`
-    checkMatch ()
+    //Once two cards are checked checks for a Match
+    checkMatch()
     card.flipped = true
-    } else {
+    } else{
       return
-      //Must hit the start button to begin the game.
+      //NOTE Must hit the start button to begin the game.
     }
-    console.log(card1)
-    console.log(card2)
+    gameDone()
   }
 
 //Check 2 cards to see if they match
-function checkMatch (){
-  if (card1?.name === card2?.name) {
+function checkMatch(){
+  //If a match is found
+  if(card1?.name === card2?.name) {
     card1.match = true 
     card2.match = true
     card1 = undefined
     card2 = undefined
+    //Counts number of matchs
+    matched++
+    console.log('matched', matched)
+  //If no match is found
   } else if(card1 && card2) {
-    console.log(card1,card2)
+    console.log(card1,card2)//NOTE MAKE A DELAY
     card1.element.style.backgroundImage=`url("${backImage}")`
     card2.element.style.backgroundImage=`url("${backImage}")`
     card1 = undefined
@@ -127,24 +122,34 @@ function checkMatch (){
   } 
 }
 
+//Game Over Functions
+function gameDone(){
+    if (sec<=0) {
+      gameOn = false;
+      resultsMessage()
+      console.log ('time is up',sec)
+    } else if (matched ===9) {
+      console.log ('All the matches are made')
+      winner = true;
+      gameOn = false;
+      resultsMessage()
+      sec=0;
+    }
+  }
 
-
-
-
-
-
-// Render Results When
-// function renderMessage() {
-//   if (cards === flipped) && (timer > 0) {MessageChannel.innerText = "You Win"}
-//   else if(cards ! flipped) && (timer === 0) {MessageChannel.innerText = "You loose"}
-//   }
-// }
-//Time out
-//No cards left on board
-//Declair you win or you loose
-
-// Option to play again
-//function to reset the game
-// resetButton.addEventListener('click',function() {
-//   document.location.reload();
-// })
+  //Sends Results Message To User
+  function resultsMessage() {
+    if (winner) {
+      results.innerHTML = `
+        <h2>
+          You Win
+        </h2>
+      `
+    } else {
+      results.innerHTML = `
+        <h2>
+          You lose
+        </h2>
+      `
+    }
+  }
