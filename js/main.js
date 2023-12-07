@@ -40,20 +40,6 @@ function init() {
   winner = false;
   sec = 60;
   timer()
-  shuffleCards();
-}
-
-//function to shuffle
-function shuffleCards(cards) {
-  //Loops backwards
-  for(Let [i] = cards.length -1; i > 0; i--) {
-    //RandomIndex creats a random between 0 and 1, then rounds it down 
-    let randomIndex = Math.floor(Math.random() * (i+1));
-    //applying the random index and shuffling the order 
-    cards[randomIndex].order = i;
-    //takes the array index name in order
-    cards[i].order = randomIndex;
-  }
 }
 
 //User clicks the start game button with Event Listener
@@ -114,11 +100,13 @@ function checkMatch(){
     console.log('matched', matched)
   //If no match is found
   } else if(card1 && card2) {
-    console.log(card1,card2)//NOTE MAKE A DELAY
+    console.log(card1,card2)
+    setTimeout(function(){
     card1.element.style.backgroundImage=`url("${backImage}")`
     card2.element.style.backgroundImage=`url("${backImage}")`
     card1 = undefined
     card2 = undefined
+    },250)
   } 
 }
 
@@ -127,13 +115,21 @@ function gameDone(){
     if (sec<=0) {
       gameOn = false;
       resultsMessage()
-      console.log ('time is up',sec)
+      setTimeout(function(){
+        gameBoard.forEach(function(card,i){
+          card.style.backgroundImage=`url("${backImage}")`
+        })  
+        },1000)
     } else if (matched ===9) {
-      console.log ('All the matches are made')
       winner = true;
       gameOn = false;
       resultsMessage()
       sec=0;
+      setTimeout(function(){
+      gameBoard.forEach(function(card,i){
+        card.style.backgroundImage=`url("${backImage}")`
+      })  
+      },1000)
     }
   }
 

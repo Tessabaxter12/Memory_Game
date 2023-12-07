@@ -22,12 +22,12 @@ h1 {
     font-style: oblique;
     text-align: center;
     color: White;
-    font-size: 8vmin;
-    margin: 10px;
+    font-size: 7vmin;
+    margin: 5px;
 }   
 
 h2 {
-    font-size: 6vmin;
+    font-size: 5vmin;
     font-style: oblique;
     color: White;
     margin: 5px;
@@ -38,7 +38,7 @@ h2 {
     margin: 10px;
     padding: 10px 10px;
     text-align: center;
-    font-size: 26px;
+    font-size: 24px;
     color: white;
     display: inline-block;
 }
@@ -52,8 +52,8 @@ h2 {
 }
 
 .cardsBack {
-    height: 170px;
-    width: 150px;
+    height: 160px;
+    width: 140px;
     border-radius: 10px;
     justify-content: center;
     align-items: center;
