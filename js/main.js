@@ -82,7 +82,6 @@ function handleMove(event,card){
     card.flipped = true
     } else{
       return
-      //NOTE Must hit the start button to begin the game.
     }
     gameDone()
   }
