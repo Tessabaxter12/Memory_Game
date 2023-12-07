@@ -10,48 +10,41 @@ Game History: The first published game form of concentration, was in 1959 by Rav
 
 Link To Game: https://github.com/Tessabaxter12/Memory_Game
 
-Game Rules: This is a one player game, that takes attention and concentration. Cards get randomly placed face down on the grid board. Then the game begins when the player hits the start game button, which also starts the 5 minute timer. The player then selects two cards that turn over. If the cards match, then the cards will go away, as they have a match. If they don't match then the cards turn back over. Player will keep playing till all the cards are gone or until the 5 minute timer runs out. Then a message will show you win or you loose. Then the game will restart.
+Game Rules: This is a one player game, that takes attention and concentration. The game begins when the player hits the start game button, which also starts the timer. The player then selects two cards that turn over. If the cards match, then there is a match, and they keep playing. If they don't match then the cards turn back over, and they keep playing. The player will keep playing till all the cards are facing over or until the timer runs out. Then a message will show you win or you loose and the cards will flip over.
 
 ## Wireframe
 
-![screenshot]("../images/Screenshot 2023-11-30 103004.png")
+![screenshot]("../fImages/Wireframe.PNG")
 
 ## Users Stories
-
 As a user I want to
 - Click start game button and have the game start
 - See the timer start once start button is clicked and see the time running.
 - See you win or you loose
-- Be able to start a new game
 
 ## Psuedocode
-
 - Define constants
     - Game Board
     - Time
-    - Restart Button
+    - Button
     - Results
 
 - Define variables
     - let cards
     - let firstCard, secondCard;
     - let lockBoard = false;
-    
-- Function for sorting cards onto 6x3 grid
 
 - Intializing the game and timer starts
 
-- Function player selects two cards, they flip over, pointer no longer works
+- Handle move Function allows player to select two cards, they flip over.
 
-- Function to determine pair, then cards go away, and take another turn
-
-- Else function to determine no match, cards flip back over, and take another turn
-
-- Timer Function
+- Match function checks for a pair. If no pair then cards flip over, and try again. Else if there is a match, cards stay on board, and keep trying.
 
 - Render Results When
-    - Time out
+    - Time runs out
     - No cards left on board
     - Declair you win or you loose
 
-- Option to play again
+## What's Next
+- Add shuffle
+- Add fastest time

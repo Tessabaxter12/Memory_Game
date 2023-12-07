@@ -82,8 +82,8 @@ function handleMove(event,card){
     card.flipped = true
     } else{
       return
-      //NOTE Must hit the start button to begin the game.
     }
+    //Runs game done function
     gameDone()
   }
 
@@ -102,6 +102,7 @@ function checkMatch(){
   } else if(card1 && card2) {
     console.log(card1,card2)
     setTimeout(function(){
+    //Flips both cards over
     card1.element.style.backgroundImage=`url("${backImage}")`
     card2.element.style.backgroundImage=`url("${backImage}")`
     card1 = undefined
@@ -115,6 +116,7 @@ function gameDone(){
     if (sec<=0) {
       gameOn = false;
       resultsMessage()
+      //Flips all cards back over
       setTimeout(function(){
         gameBoard.forEach(function(card,i){
           card.style.backgroundImage=`url("${backImage}")`
@@ -125,6 +127,7 @@ function gameDone(){
       gameOn = false;
       resultsMessage()
       sec=0;
+      //Flips all cards back over 
       setTimeout(function(){
       gameBoard.forEach(function(card,i){
         card.style.backgroundImage=`url("${backImage}")`
