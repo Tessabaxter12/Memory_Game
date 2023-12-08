@@ -76,7 +76,7 @@ function handleMove(event,card){
       card2 = card
     }
     //Allows user to flip the cards 
-    event.target.style.backgroundImage = `url("../${card.fImage}")`
+    event.target.style.backgroundImage = `url("${card.fImage}")`
     //Once two cards are checked checks for a Match
     checkMatch()
     card.flipped = true
