@@ -2,7 +2,7 @@
 const gameBoard = document.querySelectorAll(".gameBoard > div");
 const results = document.getElementById("results");
 const startButton = document.getElementById("startGame");
-const backImage = "../bImages/Fishbackground.avif"
+const backImage = "bImages/Fishbackground.avif"
 
 //Variables
 let gameOn = false;
